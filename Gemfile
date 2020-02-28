@@ -43,7 +43,7 @@ gem 'terrapin'
 # gem 'htmltoword'
 gem 'prawn', '~> 2.2.2'
 gem 'prawn-table'
-gem 'rubyzip', '>= 1.2.2' # will load new rubyzip version
+gem 'rubyzip', '>= 1.3.0' # will load new rubyzip version
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Reduces boot times through caching; required in config/boot.rb
@@ -74,7 +74,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>= 3.141.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
