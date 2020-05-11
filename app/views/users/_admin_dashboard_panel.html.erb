@@ -112,7 +112,9 @@
             </div>
           </div>
         <% end %>
-        <div class="pagination"><%= will_paginate(users, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+        <div class="pagination"><%= will_paginate(users, :renderer => WillPaginate::ActionView::LinkRenderer, 
+          :params => {:archived=> main ? "" : "true", :nominees => ""},
+        :param_name => main ? :page : :pageReg) %>
         </div>
       </div>
       <%else%>
