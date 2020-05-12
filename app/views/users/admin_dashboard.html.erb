@@ -3,33 +3,39 @@
 <%= button_to "Contact users", RELATIVE_URL + "/massive_email", :method=> :get, :class => "custom-button primary", :form_class =>"inline"%>
 <%= button_to "Log out", destroy_user_session_path, :method=> :delete, :class => "custom-button ", :form_class =>"inline"%>
 </div>
-<%# like_email = "%#{ params[:email]}%"    %>
+<%# like_email = "%#{params[:email]}%"    %>
 <% like_name = I18n.transliterate "%#{params[:name]}%"    %>
-<% like_period = "%#{ params[:period]}%"    %>
+<% like_period = "%#{params[:period]}%"    %>
 <% like_university = I18n.transliterate "%#{params[:university]}%"    %>
+<% like_status = User.progress_statuses.key(params[:progress_state].to_i)   %>
+<%joinQ = StudentApplicationForm.where("lower(academic_year) LIKE ? and lower(unaccent(inst_sending_name)) LIKE ?", like_period.downcase, like_university.downcase)%>
+<%orderQ = "#{(params[:orderby].blank? ? :family_name : params[:orderby])} #{(params[:order].blank? or params[:order].downcase == "asc") ? "ASC" : "DESC"}"%>
 
-<% users = User.where.not(role: "admin").where(archived: false).where("lower(unaccent(first_name)) LIKE ? or lower(unaccent(family_name)) LIKE ?",
- like_name.downcase,  like_name.downcase)
-    .joins(:student_application_form)
-    .merge( StudentApplicationForm.where("lower(academic_year) LIKE ? and lower(unaccent(inst_sending_name)) LIKE ?", like_period.downcase, like_university.downcase))
-    .order("#{(params[:orderby].blank? ? :family_name : params[:orderby])} #{(params[:order].blank? or params[:order].downcase == "asc") ? "ASC" : "DESC"}")
+
+<% users = User.where.not(role: "admin")
+    .where(archived: false)
+    .where("lower(unaccent(first_name)) LIKE ? or lower(unaccent(family_name)) LIKE ?", like_name.downcase,  like_name.downcase)
+users = users.where(:progress_status => like_status) if !params[:progress_state].blank?
+users = users.joins(:student_application_form)
+    .merge(joinQ)
+    .order(orderQ)
     .paginate(:per_page => 30, :page => params[:page].blank? ? 1 : params[:page])
 %>
 
-<% archived_users = User.where.not(role: "admin").where(archived: true).where("lower(unaccent(first_name)) LIKE ? or lower(unaccent(family_name)) LIKE ?",
- like_name.downcase,  like_name.downcase)
-    .joins(:student_application_form)
-    .merge( StudentApplicationForm.where("lower(academic_year) LIKE ? and lower(unaccent(inst_sending_name)) LIKE ?", like_period.downcase, like_university.downcase))
-    .order("#{(params[:orderby].blank? ? :family_name : params[:orderby])} #{(params[:order].blank? or params[:order].downcase == "asc") ? "ASC" : "DESC"}")
-   .paginate(:per_page => 30, :page => params[:pageReg].blank? ? 1 : params[:pageReg])
+<% archived_users = User.where.not(role: "admin")
+    .where(archived: true)
+    .where("lower(unaccent(first_name)) LIKE ? or lower(unaccent(family_name)) LIKE ?", like_name.downcase,  like_name.downcase)
+archived_users = archived_users.where(:progress_status => like_status) if !params[:progress_state].blank?
+archived_users =  archived_users.joins(:student_application_form)
+    .merge(joinQ)
+    .order(orderQ)
+    .paginate(:per_page => 30, :page => params[:pageReg].blank? ? 1 : params[:pageReg])
 %>
 
 <% settings = ProjectSettings.first_or_create! %>
 
-<% unless params[:progress_state].blank? %>
-  <%users.reject!{|t| t.progress_status_before_type_cast != params[:progress_state].to_i}%>
-<% end %>
-<% nominees = NominatedUser.all%> <%#where("lower(email) LIKE ? ", like_email.downcase %>
+<% nominees = NominatedUser.all%> 
+<%#where("lower(email) LIKE ? ", like_email.downcase %>
 
 <% admin_name = current_user.first_name.blank? ? "Administrator" : (current_user.first_name + " " + current_user.family_name) %>
 <h1 class="title"> Hi, <%=admin_name%></h1>
