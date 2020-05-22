@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12', '>= 3.12.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,7 +63,7 @@ group :development do
   gem 'capistrano-rbenv-install'             # ensures the right ruby version is installed
   gem 'capistrano-bundler'      # support for bundler
   gem 'capistrano-rails'           # automatic migrations and asset compilation
-  gem 'capistrano3-puma'
+  gem 'capistrano3-puma', '>= 3.1.1'
   gem 'capistrano-rake'
   gem 'capistrano-rails-console', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
