@@ -2478,198 +2478,198 @@ var data = [
         "degree": "MUSTC",
         "code": 93000920,
         "name": "OPTIMIZATION FUNDAMENTALS",
-        "nombre": "",
+        "nombre": "FUNDAMENTOS DE OPTIMIZACIÓN",
         "ects": 3,
-        "acron": "",
-        "year": ""
+        "acron": "OPTF",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000921,
         "name": "RADIOFREQUENCY OPTIMIZATION TECHNIQUES",
-        "nombre": "",
+        "nombre": "TÉCNICAS DE OPTIMIZACIÓN EN RADIOFRECUENCIA",
         "ects": 3,
-        "acron": "",
-        "year": ""
+        "acron": "RFOT",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000922,
         "name": "RADIOFREQUENCY TECHNOLOGIES",
-        "nombre": "",
+        "nombre": "TECNOLOGÍAS DE RADIOFRECUENCIA",
         "ects": 6,
-        "acron": "",
-        "year": ""
+        "acron": "RFTC",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000923,
         "name": "ADVANCED TOPICS ON ANTENNA TECHNOLOGIES",
-        "nombre": "",
+        "nombre": "TEMAS AVANZADOS EN TECNOLOGÍA DE ANTENAS",
         "ects": 6,
-        "acron": "",
-        "year": ""
+        "acron": "ATAT",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000924,
         "name": "MOBILE COMMUNICATIONS: 4G AND BEYOND",
-        "nombre": "",
+        "nombre": "COMUNICACIONES MÓVILES: 4G Y MÁS ALLÁ",
         "ects": 3,
-        "acron": "",
-        "year": ""
+        "acron": "MC4G",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000925,
         "name": "DESIGN OF COMMUNICATION SYSTEMS AND EQUIPMENT",
-        "nombre": "",
+        "nombre": "DISEÑO DE SISTEMAS Y EQUIPOS DE COMUNICACIONES",
         "ects": 6,
-        "acron": "",
-        "year": ""
+        "acron": "DCSE",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000926,
         "name": "FROM ARRAY PROCESSING TO MIMO COMMUNICATIONS",
-        "nombre": "",
+        "nombre": "DEL PROCESADO EN ARRAY A LAS COMUNICACIONES MIMO",
         "ects": 6,
-        "acron": "",
-        "year": ""
+        "acron": "APMC",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000927,
         "name": "SECURE RF COMMUNICATIONS",
-        "nombre": "",
+        "nombre": "APMC",
         "ects": 3,
-        "acron": "",
-        "year": ""
+        "acron": "SRFC",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000928,
         "name": "LABORATORY COURSE ON RF COMMUNICATIONS",
-        "nombre": "",
+        "nombre": "LABORATORIO DE MEDIDAS DE RF",
         "ects": 6,
-        "acron": "",
-        "year": ""
+        "acron": "LRFM",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000938,
         "name": "OPTIMIZATION TECHNIQUES FOR BIG-DATA ANALYSIS",
-        "nombre": "",
+        "nombre": "TÉCNICAS DE OPTIMIZACIÓN PARA ANÁLISIS DE DATOS MASIVOS",
         "ects": 3,
-        "acron": "",
-        "year": ""
-    },
-    {
-        "degree": "MUSTC",
-        "code": 93000938,
-        "name": "STATISTICAL MODELING",
-        "nombre": "",
-        "ects": 3,
-        "acron": "",
-        "year": ""
+        "acron": "OTBD",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000939,
-        "name": "TIME SERIES ANALYSIS",
-        "nombre": "",
-        "ects": 4.5,
-        "acron": "",
-        "year": ""
+        "name": "STATISTICAL MODELING",
+        "nombre": "ANÁLISIS ESTADÍSTICO",
+        "ects": 3,
+        "acron": "STMO",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000940,
-        "name": "PREDICTIVE AND DESCRIPTIVE LEARNING",
-        "nombre": "",
-        "ects": 6,
-        "acron": "",
-        "year": ""
+        "name": "TIME SERIES ANALYSIS",
+        "nombre": "SERIES TEMPORALES",
+        "ects": 4.5,
+        "acron": "TSAN",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000941,
-        "name": "DATA SCIENCE FOUNDATIONS AND APPLICATIONS",
-        "nombre": "",
-        "ects": 2,
-        "acron": "",
-        "year": ""
+        "name": "PREDICTIVE AND DESCRIPTIVE LEARNING",
+        "nombre": "APRENDIZAJE PREDICTIVO Y DESCRIPTIVO",
+        "ects": 6,
+        "acron": "PRDL",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000942,
-        "name": "MACHINE LEARNING LAB",
-        "nombre": "",
-        "ects": 4.5,
-        "acron": "",
-        "year": ""
+        "name": "DATA SCIENCE FOUNDATIONS AND APPLICATIONS",
+        "nombre": "CIENCIA DE LOS DATOS Y APLICACIONES",
+        "ects": 2,
+        "acron": "DSFA",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000943,
-        "name": "LARGE SCALE MEDIA ANALYTICS",
-        "nombre": "",
-        "ects": 4,
-        "acron": "",
-        "year": ""
+        "name": "MACHINE LEARNING LAB",
+        "nombre": "LABORATORIO DE TÉCNICAS DE APRENDIZAJE AUTOMÁTICO",
+        "ects": 4.5,
+        "acron": "MLLB",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000944,
-        "name": "SIGNAL PROCESSING FOR BIG DATA",
-        "nombre": "",
+        "name": "LARGE SCALE MULTIMEDIA ANALYTICS",
+        "nombre": "ANALÍTICA DE CONTENIDOS MULTIMEDIA A GRAN ESCALA",
         "ects": 4,
-        "acron": "",
-        "year": ""
+        "acron": "LSMA",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000945,
-        "name": "BIG DATA FOR IMAGE AND VIDEO SIGNALS",
-        "nombre": "",
+        "name": "SIGNAL PROCESSING FOR BIG DATA",
+        "nombre": "TRATAMIENTO DE SEÑAL PARA DATOS MASIVOS",
         "ects": 4,
-        "acron": "",
-        "year": ""
+        "acron": "SPBD",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000946,
-        "name": "BIO-INSPIRED LEARNING",
-        "nombre": "",
-        "ects": 3,
-        "acron": "",
-        "year": ""
+        "name": "BIG DATA FOR IMAGE AND VIDEO SIGNALS",
+        "nombre": "TÉCNICAS DE TRATAMIENTO DE DATOS MASIVOS PARA IMAGEN Y VÍDEO",
+        "ects": 4,
+        "acron": "BDIVS",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000947,
-        "name": "REINFORCEMENT LEARNING",
-        "nombre": "",
+        "name": "BIO-INSPIRED LEARNING",
+        "nombre": "APRENDIZAJE BIO-INSPIRADO",
         "ects": 3,
-        "acron": "",
-        "year": ""
+        "acron": "BINL",
+        "year": 1
+    },
+    {
+        "degree": "MUSTC",
+        "code": 93000948,
+        "name": "REINFORCEMENT LEARNING",
+        "nombre": "APRENDIZAJE DE REFUERZO",
+        "ects": 3,
+        "acron": "REIL",
+        "year": 1
     },
     {
         "degree": "MUSTC",
         "code": 93000948,
         "name": "APPLICATION PROJECTS",
-        "nombre": "",
+        "nombre": "PROYECTOS DE APLICACIÓN",
         "ects": 4,
-        "acron": "",
-        "year": ""
+        "acron": "APPR",
+        "year": 1
     },
     {
         "degree": "MUSTC",
-        "code": 2,
+        "code": "93000950",
         "name": "MASTER THESIS",
-        "nombre": "",
+        "nombre": "TRABAJO FIN DE MASTER",
         "ects": 12,
-        "acron": "",
-        "year": ""
+        "acron": "TFM",
+        "year": 1
     }
 ]
