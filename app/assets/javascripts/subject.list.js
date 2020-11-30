@@ -2656,7 +2656,7 @@ var data = [
     },
     {
         "degree": "MUSTC",
-        "code": 93000948,
+        "code": 93000949,
         "name": "APPLICATION PROJECTS",
         "nombre": "PROYECTOS DE APLICACIÓN",
         "ects": 4,
