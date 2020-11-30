@@ -2541,7 +2541,7 @@ var data = [
         "degree": "MUSTC",
         "code": 93000927,
         "name": "SECURE RF COMMUNICATIONS",
-        "nombre": "APMC",
+        "nombre": "COMUNICACIONES RF SEGURAS",
         "ects": 3,
         "acron": "SRFC",
         "year": 1
