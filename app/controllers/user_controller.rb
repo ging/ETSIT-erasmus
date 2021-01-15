@@ -343,12 +343,23 @@ class UserController < ApplicationController
 			if !params[:project_settings][:course_offering].blank?
 				require 'roo'
 				xls = Roo::Spreadsheet.open(params[:project_settings][:course_offering])
-				if xls.row(1)[0] != "Academic year" or xls.row(1)[1] != "Code"
-					raise "The file does not contain the expected column names"
+				
+				original_column_names = ["Academic year", "Code", "Name", "Degree", "Degree code", "Year", "Sem.", "Acronym", "ECTS", "Type", "Itinerario / especialidad", "Tuition language", "Comments", "Cupo para Incoming", "Coordinador", "correo-e Coordinador", "Presidente Tribunal", "Vocal Tribunal", "Secretario Tribunal", "Suplente", "Course"]
+				for i in 0...(original_column_names).length
+					if original_column_names[i] != xls.row(1)[i]
+						raise "The column named '#{xls.row(1)[i]}' was expected to be named '#{original_column_names[i]}'"
+					end
 				end
-				headers = ["academic_year", "code", "nombre", "degree", "degree_code", "year", "semester", "acron", "ects", "type", "itinerario", "language", "comments", "cupo", "coordinator", "email_coordinator", "president", "vocal", "secretary", "supplent", "name", "old"]
+				
+				headers = ["academic_year", "code", "nombre", "degree", "degree_code", "year", "semester", "acron", "ects", "type", "itinerario", "language", "comments", "cupo", "coordinator", "email_coordinator", "president", "vocal", "secretary", "supplent", "name"]
+				for i in 0...(xls.row(1)).length
+					if i >= headers.length
+						val = xls.row(1)[i] || "extra"
+						headers << val.parameterize.gsub("-","_")
+					end
+				end
 				result = []
-				xls.each_with_index do |row, idx|
+ 				xls.each_with_index do |row, idx|
 	  				next if idx == 0 # skip header
 	  				next if row[2] == nil # skip empty rows
 		  			user_data = Hash[[headers, row].transpose]
@@ -360,7 +371,7 @@ class UserController < ApplicationController
 				ps.save!
 			end
 		rescue => error
-			redirect_to admin_dashboard_path, notice: "There was an error importing the excel file: #{error.message}"
+			redirect_to admin_dashboard_path, flash: {error: "There was an error importing the excel file: #{error.message}"}
 			return
 		end
 		redirect_to admin_dashboard_path
