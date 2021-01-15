@@ -1,4 +1,4 @@
-var data = [
+var data2 = [
     {
         "degree": "GIB",
         "code": 95000100,

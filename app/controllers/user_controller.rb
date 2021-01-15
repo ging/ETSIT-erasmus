@@ -315,12 +315,14 @@ class UserController < ApplicationController
 	end
 
 	def update_settings
+
 		settings = params.require(:project_settings).permit(
 				:current_academic_year,
 				:next_academic_year,
 				:deadline_first_semeter,
 				:deadline_second_semester,
 				:deadline_double_degree,
+			
 		)
 
 		if !params[:mobility_programmes].blank?
@@ -335,8 +337,32 @@ class UserController < ApplicationController
 			settings[:academic_years] = [].inspect
 
 		end
-		ProjectSettings.first_or_create.update(settings)
+		ps = ProjectSettings.first_or_create
+		ps.update(settings)
+		begin
+			if !params[:project_settings][:course_offering].blank?
+				require 'roo'
+				xls = Roo::Spreadsheet.open(params[:project_settings][:course_offering])
+				if xls.row(1)[0] != "Academic year" or xls.row(1)[1] != "Code"
+					raise "The file does not contain the expected column names"
+				end
+				headers = ["academic_year", "code", "nombre", "degree", "degree_code", "year", "semester", "acron", "ects", "type", "itinerario", "language", "comments", "cupo", "coordinator", "email_coordinator", "president", "vocal", "secretary", "supplent", "name", "old"]
+				result = []
+				xls.each_with_index do |row, idx|
+	  				next if idx == 0 # skip header
+	  				next if row[2] == nil # skip empty rows
+		  			user_data = Hash[[headers, row].transpose]
+		  			result << user_data
+					
+				end
 
+				ps.course_offering_json = result
+				ps.save!
+			end
+		rescue => error
+			redirect_to admin_dashboard_path, notice: "There was an error importing the excel file: #{error.message}"
+			return
+		end
 		redirect_to admin_dashboard_path
 	end
 	def archive

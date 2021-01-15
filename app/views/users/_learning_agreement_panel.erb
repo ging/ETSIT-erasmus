@@ -22,7 +22,8 @@
         <select class="la-degree" name="user[learning_agreement_subjects][][degree]" value="<%= subject.degree %>" <%= admin ? "disabled":"" %>>
           <option value="" disabled required ></option>
           <option value="GITST" <%= subject.degree == "GITST" ? "selected" : "" %>>GITST</option>
-          <option value="GIB" <%= subject.degree == "GIB" ? "selected" : "" %>>GIB</option>
+          <option value="GIB" <%= subject.degree == "GIB" ? "selected" : "" %>>GIB</option>          
+          <option value="GISD" <%= subject.degree == "GISD" ? "selected" : "" %>>GISD</option>
           <option value="MUIT" <%= subject.degree == "MUIT" ? "selected" : "" %>>MUIT</option>
           <option value="MUIB" <%= subject.degree == "MUIB" ? "selected" : "" %>>MUIB</option>
           <option value="MUSTC" <%= subject.degree == "MUSTC" ? "selected" : "" %>>MUSTC</option>
@@ -49,6 +50,7 @@
       <option value="" disabled selected required></option>
       <option value="GITST">GITST</option>
       <option value="GIB">GIB</option>
+      <option value="GISD">GISD</option>
       <option value="MUIT">MUIT</option>
       <option value="MUIB">MUIB</option>
       <option value="MUSTC">MUSTC</option>
@@ -91,6 +93,7 @@
   <ul>
     <li class="info-degree"><a target="_blank" href="http://www.etsit.upm.es/estudios/grado-en-ingenieria-de-tecnologias-y-servicios-de-telecomunicacion.html">Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación (GITST)</a> </li>
     <li class="info-degree"><a target="_blank" href="http://www.etsit.upm.es/estudios/grado-en-ingenieria-biomedica.html">Grado en Ingeniería Biomédica (GIB)</a> </li>
+    <li class="info-degree"><a target="_blank" href="http://www.etsit.upm.es/estudios/grado-en-ingenieria-y-sistemas-de-datos-nuevo.html">Grado en Ingeniería y Sistemas de Datos (GISD)</a> </li>
     <li class="info-degree"><a target="_blank" href="http://www.etsit.upm.es/estudios/master-universitario-en-ingenieria-de-telecomunicacion.html">Máster Universitario en Ingeniería de Telecomunicación (MUIT)</a> </li>
     <li class="info-degree"><a target="_blank" href="http://www.etsit.upm.es/estudios/masteres-oficiales/programas-ofertados/master-u-ciberseguridad.html">Máster Universitario en Ciberseguridad (MUCS)</a> </li>
     <li class="info-degree"><a target="_blank" href="http://www.etsit.upm.es/estudios/masteres-oficiales/programas-ofertados/master-u-energia-solar-fotovoltaica.html">Máster Universitario en Energía Solar Fotovoltaica (MUESFV)</a> </li>
@@ -104,3 +107,5 @@
   <br/>
   <p class="more-info">More degrees available at <b><a target="_blank" href="http://upm.es">upm.es</a></b>.</p>
 </div>
+
+ 

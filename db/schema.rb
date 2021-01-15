@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_201423) do
+ActiveRecord::Schema.define(version: 2021_01_13_201424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,11 @@ ActiveRecord::Schema.define(version: 2018_12_05_201423) do
     t.string "mobility_programmes", default: "[\"Erasmus+ Studies\", \"Erasmus+ Placement\", \"Magalhães\", \"Bilateral Agreement\", \"Visiting Student\", \"SICUE/SENECA\", \"Other\"]"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "course_offering_file_name"
+    t.string "course_offering_content_type"
+    t.integer "course_offering_file_size"
+    t.datetime "course_offering_updated_at"
+    t.json "course_offering_json"
   end
 
   create_table "student_application_forms", force: :cascade do |t|

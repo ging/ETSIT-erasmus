@@ -6,8 +6,19 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <% ps = ProjectSettings.first_or_create%>
+    
+    <script>
+    <%if !ps[:course_offering_json].blank?%>
+        var data = <%=raw(ps[:course_offering_json].to_json)%>
+    <%else%>
+        var data = [];
+    <%end%>
+    </script>
+ 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <link rel="shortcut icon" href="https://www.etsit.upm.es/fileadmin/template/images/favicon.ico" type="image/x-icon; charset=binary">
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">

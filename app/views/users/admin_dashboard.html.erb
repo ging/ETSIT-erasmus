@@ -250,7 +250,11 @@ archived_users =  archived_users.joins(:student_application_form)
           </div>
         </div>
       </div>
+      <div class="flex-container-form-item">
+        <label for="course_offering">Excel file containing the current course offering</label>
+        <%= f.file_field :course_offering %>
 
+      </div>
     </div>
     <p class="align-right">
       <%= f.submit "Update", :class => "custom-button primary" %>

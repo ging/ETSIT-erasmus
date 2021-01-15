@@ -316,8 +316,33 @@ $(document).on('turbolinks:load', function() {
     /**
      * Send Learning Agreement Subjects
      */
-    $('#la-form').submit(function() {
 
+     var unsaved = false;
+
+     $(document).on("change","#la-form input", function(){
+         unsaved = true;
+     });
+
+     function unloadPage(){ 
+         if(unsaved){
+             return "You might have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?";
+         }
+     }
+
+     window.onbeforeunload = unloadPage;
+     window.addEventListener("turbolinks:before-render", unloadPage);
+
+
+     var dispatchUnloadEvent = function() {
+       var event = document.createEvent("Events")
+       event.initEvent("turbolinks:unload", true, false)
+       document.dispatchEvent(event)
+     }
+
+     addEventListener("beforeunload", dispatchUnloadEvent)
+     addEventListener("turbolinks:before-render", dispatchUnloadEvent)
+
+    $('#la-form').submit(function() {
         var oData = new FormData(document.getElementById("la-form"));
         oData.append("authenticity_token", $('#la-form input[name="authenticity_token"]').val());
         var oReq = new XMLHttpRequest();
@@ -329,9 +354,10 @@ $(document).on('turbolinks:load', function() {
             if (oReq.status == 200) {
                 try {
                     $('#la-server-msg').text("Saved!");
+                    unsaved = false;
                     setTimeout(function(){
                         $('#la-server-msg').text("");
-                    }, 3000);
+                    }, 10000);
                 } catch (e) {
                     console.error("An error ocurred when uploading the file", e)
                     // $('.messages-from-server').append($('<p class="message-from-server alert">An error ocurred</p>'));
@@ -445,6 +471,7 @@ $(document).on('turbolinks:load', function() {
         var list = {
             "GITST": "Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación ",
             "GIB": "Grado en Ingeniería Biomédica",
+            "GISD": "Grado en Ingeniería y Sistemas de Datos",
             "MUIT": "Máster Universitario en Ingeniería de Telecomunicación",
             "MUIB": "Máster Universitario en Ingeniería Biomédica",
             "MUSTC": "Master of Science in Signal Theory and Communications",
