@@ -42,7 +42,7 @@ gem 'terrapin'
 # gem 'capistrano-rails', group: :development
 # gem 'htmltoword'
 gem 'prawn', '~> 2.2.2'
-gem 'roo', '~> 2.8'
+gem 'roo', '~> 2.8', '>= 2.8.2'
 gem 'prawn-table'
 gem 'rubyzip', '>= 1.2.2' # will load new rubyzip version
 gem 'will_paginate', '~> 3.1.0'
