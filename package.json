@@ -2,7 +2,7 @@
   "name": "EID4U",
   "private": true,
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.4",
     "debug": "^4.1.0",
     "fs": "0.0.1-security",
     "underscore": "^1.8.3",
